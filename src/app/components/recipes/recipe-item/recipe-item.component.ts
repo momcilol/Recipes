@@ -8,6 +8,8 @@ import { Result } from 'src/app/model/ComplexSearch/result';
 })
 export class RecipeItemComponent implements OnInit {
 
+
+
   @Input()
   public recipe: Result;
 
