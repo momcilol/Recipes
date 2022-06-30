@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
 
 const MaterialComponents = [
   MatCardModule,
@@ -18,7 +19,8 @@ const MaterialComponents = [
   MatFormFieldModule,
   MatSliderModule,
   MatChipsModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatSelectModule
 ];
 
 @NgModule({

@@ -1,48 +1,38 @@
 <form (ngSubmit)="search(searchForm)" #searchForm="ngForm">
-    <div ngModelGroup="search">
-        <mat-form-field class="form-field" appearance="fill">
-            <mat-label>Search recipe</mat-label>
-            <input matInput type="text" ngModel #searchTerm="ngModel" name="searchTerm" required />
-            <button matSuffix mat-icon-button type="submit">
-                <mat-icon>search</mat-icon>
-            </button>
-        </mat-form-field>
-        <br>
-        <mat-slider ngModel #resultsNumber="ngModel" name="resultsNumber" thumbLabel [displayWith]="formatLabel"
-            step="1" min="5" max="20" aria-label="units" color="primary"></mat-slider>
-        <br>
-        <mat-form-field class="example-chip-list" appearance="fill">
-            <mat-label>Diets</mat-label>
-            <mat-chip-list #chipList aria-label="Diet selection">
-              <mat-chip
-                *ngFor="let diet of diets"
-                (removed)="remove(diet)">
-                {{fruit}}
-                <button matChipRemove>
-                  <mat-icon>cancel</mat-icon>
-                </button>
-              </mat-chip>
-              <input
-                placeholder="New fruit..."
-                #fruitInput
-                [formControl]="fruitCtrl"
-                [matAutocomplete]="auto"
-                [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                (matChipInputTokenEnd)="add($event)">
-            </mat-chip-list>
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-              <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
-                {{fruit}}
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-          
-    </div>
+  <div ngModelGroup="search">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Search recipe</mat-label>
+      <input matInput type="text" ngModel #searchTerm="ngModel" name="searchTerm" />
+      <button matSuffix mat-icon-button type="submit">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+    <br>
+
+    <mat-slider ngModel #resultsNumber="ngModel" name="resultsNumber" thumbLabel [displayWith]="formatLabel" step="1"
+      min="5" max="20" aria-label="units" color="primary"></mat-slider>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose your diet</mat-label>
+      <mat-select ngModel #seletedDiet="ngModel" name="selectedDiet">
+        <mat-option *ngFor="let diet of diets" [value]="diet">{{diet}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-chip-list multiple="true" ngModel #intoleranceList="ngModel" name="intoleranceList" aria-label="Diet selection">
+      <mat-chip *ngFor="let intolerance of intolerances" [color]="">
+        {{intolerance}}
+      </mat-chip>
+    </mat-chip-list>
+
+
+
+  </div>
 </form>
 
 <mat-grid-list cols="3" rowHeight="1:1">
-    <mat-grid-tile *ngFor="let recipe of recipes">
-        <app-recipe-item [recipe]="recipe"></app-recipe-item>
-    </mat-grid-tile>
+  <mat-grid-tile *ngFor="let recipe of recipes | async">
+    <app-recipe-item [recipe]="recipe"></app-recipe-item>
+  </mat-grid-tile>
 </mat-grid-list>

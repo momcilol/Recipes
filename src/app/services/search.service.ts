@@ -14,12 +14,13 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) { }
 
-  complexSearchRecipes(searchTerm: string, resultsNumber: number): Observable<RootObject> {
+  complexSearchRecipes(searchTerm: string, resultsNumber: number, diet: string): Observable<RootObject> {
     return this.httpClient.get<RootObject>(this.baseUrl + '/recipes/complexSearch', {
       params: {
         apiKey: this.apiKey, 
         query: searchTerm,
-        number: resultsNumber
+        number: resultsNumber,
+        diet: diet
       }
     }).pipe(
        tap(console.log)

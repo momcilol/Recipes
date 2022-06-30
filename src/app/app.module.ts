@@ -7,7 +7,7 @@ import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-ite
 import { RecipeListComponent } from './components/recipes/recipe-list/recipe-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     SearchService
