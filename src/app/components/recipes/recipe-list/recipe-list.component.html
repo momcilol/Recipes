@@ -1,36 +1,58 @@
-<form (ngSubmit)="search(searchForm)" #searchForm="ngForm">
+<form (ngSubmit)="search(searchForm)" #searchForm="ngForm" class="formClass">
   <div ngModelGroup="search">
-    <mat-form-field class="form-field" appearance="fill">
-      <mat-label>Search recipe</mat-label>
-      <input matInput type="text" ngModel #searchTerm="ngModel" name="searchTerm" />
-      <button matSuffix mat-icon-button type="submit">
-        <mat-icon>search</mat-icon>
-      </button>
-    </mat-form-field>
-    <br>
+    <mat-grid-list cols="3" rowHeight="100px" class="search-grid">
 
-    <mat-slider ngModel #resultsNumber="ngModel" name="resultsNumber" thumbLabel [displayWith]="formatLabel" step="1"
-      min="5" max="20" aria-label="units" color="primary"></mat-slider>
-    <br>
+      <mat-grid-tile [colspan]="3" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label>Search recipe</mat-label>
+          <input matInput type="text" ngModel #searchTerm="ngModel" name="searchTerm" />
+          <button matSuffix mat-icon-button type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-grid-tile>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Choose your diet</mat-label>
-      <mat-select ngModel #seletedDiet="ngModel" name="selectedDiet">
-        <mat-option *ngFor="let diet of diets" [value]="diet">{{diet}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label>Choose your diet</mat-label>
+          <mat-select ngModel #seletedDiet="ngModel" name="selectedDiet">
+            <mat-option *ngFor="let diet of diets" [value]="diet">{{diet}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
 
-    <mat-chip-list multiple="true" ngModel #intoleranceList="ngModel" name="intoleranceList" aria-label="Diet selection">
-      <mat-chip *ngFor="let intolerance of intolerances" [color]="">
-        {{intolerance}}
-      </mat-chip>
-    </mat-chip-list>
-
-
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-label for="slider" class="slider">Number of search results</mat-label>
+        <mat-slider id="slider" ngModel #resultsNumber="ngModel" name="resultsNumber" thumbLabel
+          [displayWith]="formatLabel" step="1" min="5" max="20" aria-label="units" color="primary" class="slider">
+        </mat-slider>
+        <br>
+      </mat-grid-tile>
+    </mat-grid-list>
+    
+    <mat-accordion multi="true" >
+      <mat-expansion-panel class="search-grid">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Intolerances</mat-panel-title>
+          <mat-panel-description>Choose ingredients which you cannot consume</mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-chips-multi-select id="intols" name="intols" [options]="intolerances" [formControl]="intolCtrl">
+        </app-chips-multi-select>
+      </mat-expansion-panel>
+      
+      <mat-expansion-panel class="search-grid">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Cuisines</mat-panel-title>
+          <mat-panel-description>Choose which cuisines your wanted recipes should belong to</mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-chips-multi-select id="cuiss" name="cuiss" [options]="cuisines" [formControl]="cuisCtrl">
+        </app-chips-multi-select>
+      </mat-expansion-panel>
+    </mat-accordion>
 
   </div>
 </form>
-
+<hr>
 <mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile *ngFor="let recipe of recipes | async">
     <app-recipe-item [recipe]="recipe"></app-recipe-item>

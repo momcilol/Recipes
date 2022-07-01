@@ -10,12 +10,16 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ChipsMultiSelectComponent } from './components/chips-multi-select/chips-multi-select.component';
+import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeItemComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    ChipsMultiSelectComponent,
+    RecipeDetailComponent
   ],
   imports: [
     BrowserModule,

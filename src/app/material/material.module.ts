@@ -9,6 +9,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const MaterialComponents = [
   MatCardModule,
@@ -20,7 +23,10 @@ const MaterialComponents = [
   MatSliderModule,
   MatChipsModule,
   MatAutocompleteModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSidenavModule,
+  ScrollingModule,
+  MatExpansionModule
 ];
 
 @NgModule({

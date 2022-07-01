@@ -1,5 +1,9 @@
 .form-field {
-    width: 200px;
+    width: 100%;
+}
+
+.slider {
+    margin: 10px;
 }
 
 mat-slider {
@@ -9,3 +13,16 @@ mat-slider {
 .example-chip-list {
     width: 100%;
 }
+
+mat-icon {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+.search-grid {
+    max-width: 1000px;
+}
+

@@ -1,0 +1,45 @@
+import { AnalyzedInstruction } from "./analyzed-instruction";
+import { ExtendedIngredient } from "./extended-ingredient";
+import { Nutrition } from "./nutrition";
+import { WinePairing } from "./wine-pairing";
+
+export interface RecipeInformation {
+    vegetarian: boolean;
+    vegan: boolean;
+    glutenFree: boolean;
+    dairyFree: boolean;
+    veryHealthy: boolean;
+    cheap: boolean;
+    veryPopular: boolean;
+    sustainable: boolean;
+    lowFodmap: boolean;
+    weightWatcherSmartPoints: number;
+    gaps: string;
+    preparationMinutes: number;
+    cookingMinutes: number;
+    aggregateLikes: number;
+    healthScore: number;
+    pricePerServing: number;
+    extendedIngredients: ExtendedIngredient[];
+    id: number;
+    title: string;
+    readyInMinutes: number;
+    servings: number;
+    sourceUrl: string;
+    openLicense: number;
+    image: string;
+    imageType: string;
+    nutrition: Nutrition;
+    summary: string;
+    cuisines: any[];
+    dishTypes: string[];
+    diets: any[];
+    occasions: any[];
+    winePairing: WinePairing;
+    instructions: string;
+    analyzedInstructions: AnalyzedInstruction[];
+    sourceName?: any;
+    creditsText?: any;
+    originalId?: any;
+    spoonacularSourceUrl: string;
+}

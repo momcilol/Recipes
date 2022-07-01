@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Result } from 'src/app/model/ComplexSearch/result';
 
 @Component({
@@ -8,14 +9,16 @@ import { Result } from 'src/app/model/ComplexSearch/result';
 })
 export class RecipeItemComponent implements OnInit {
 
-
-
   @Input()
   public recipe: Result;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  seeDetails() {
+    this.router.navigate(["/recipe-detail", { id: this.recipe.id }]);
   }
 
 }

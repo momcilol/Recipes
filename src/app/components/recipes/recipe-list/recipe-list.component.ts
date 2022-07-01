@@ -1,10 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Result } from 'src/app/model/ComplexSearch/result';
 import { SearchService } from 'src/app/services/search.service';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl } from '@angular/forms';
+import { UntilDestroy } from '@ngneat/until-destroy';
+import { Router } from '@angular/router';
 
+@UntilDestroy()
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -12,13 +14,14 @@ import { FormControl } from '@angular/forms';
 })
 export class RecipeListComponent implements OnInit {
 
-
   public recipes: Observable<Result[]>;
   public diets: string[];
   public cuisines: string[];
+  public cuisCtrl: FormControl = new FormControl([]);
   public intolerances: string[];
+  public intolCtrl: FormControl = new FormControl([]);
 
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService, private router: Router) {
     // this.recipes = [
     //   {
     //     "id": 654959,
@@ -57,7 +60,6 @@ export class RecipeListComponent implements OnInit {
       "Whole30"
     ];
     this.cuisines = [
-      "",
       "African",
       "American",
       "British",
@@ -103,12 +105,15 @@ export class RecipeListComponent implements OnInit {
   }
 
   search(searchForm: any) {
+    console.log(this.intolCtrl.value);
+    console.log(this.cuisCtrl.value);
     this.recipes = this.searchService.complexSearchRecipes(
       searchForm.value.search["searchTerm"],
       searchForm.value.search["resultsNumber"],
-      searchForm.value.search["selectedDiet"]
-      // searchForm.value.search["intoleranceList"]
-      )
+      searchForm.value.search["selectedDiet"],
+      this.intolCtrl.value,
+      this.cuisCtrl.value
+    )
       .pipe(
         map((rootObject) => {
           return rootObject.results;
@@ -119,6 +124,7 @@ export class RecipeListComponent implements OnInit {
   formatLabel(value: number) {
     return value;
   }
+
 
 
 }
