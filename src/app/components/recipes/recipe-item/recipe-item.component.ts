@@ -18,7 +18,8 @@ export class RecipeItemComponent implements OnInit {
   }
 
   seeDetails() {
-    this.router.navigate(["/recipe-detail", { id: this.recipe.id }]);
+    console.log("see details");
+    this.router.navigate(["/recipe-detail", this.recipe.id]);
   }
 
 }

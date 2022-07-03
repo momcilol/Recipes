@@ -1,10 +1,1 @@
-<h1>{{title}}</h1>
-<mat-sidenav-container >
-  <mat-sidenav mode="side" opened disableClose >
-    <li><a routerLink="/recipe-list" routerLinkActive="active" ariaCurrentWhenActive="page">Recipe List</a></li>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-
-</mat-sidenav-container>
+<app-layout [title]="title"></app-layout>

@@ -12,6 +12,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MaterialComponents = [
   MatCardModule,
@@ -26,7 +31,12 @@ const MaterialComponents = [
   MatSelectModule,
   MatSidenavModule,
   ScrollingModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatProgressSpinnerModule,
+  MatListModule,
+  MatStepperModule,
+  MatToolbarModule,
+  MatMenuModule
 ];
 
 @NgModule({

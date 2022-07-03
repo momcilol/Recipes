@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: "266b48eccb9a411698faa98d94ec1167",
+  apiKey1: "266b48eccb9a411698faa98d94ec1167",
+  apiKey2: "9cde6d9e0e9e4348af82b3fa1421578b",
   baseUrl: "https://api.spoonacular.com"
 };
 

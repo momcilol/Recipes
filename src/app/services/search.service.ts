@@ -11,7 +11,7 @@ import { RecipeInformation } from '../model/RecipeDetails/recipe-information';
 export class SearchService {
 
   private baseUrl = environment.baseUrl;
-  private apiKey = environment.apiKey;
+  private apiKey = environment.apiKey2;
 
   constructor(private httpClient: HttpClient) { }
 

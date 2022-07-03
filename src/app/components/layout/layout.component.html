@@ -1,0 +1,26 @@
+<mat-toolbar class="sticky-top" color="primary" role="heading">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <span><h1><strong>{{title}}</strong></h1></span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <button mat-menu-item>Register</button>
+    </mat-menu>
+  </mat-toolbar>
+  <!-- <div class="sticky-top">
+    <h1>{{title}}</h1>
+  </div> -->
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened disableClose>
+      <li><a routerLink="/recipe-list" routerLinkActive="active" ariaCurrentWhenActive="page">Recipe List</a></li>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>

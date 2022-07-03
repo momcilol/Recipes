@@ -12,6 +12,13 @@ import { SearchService } from './services/search.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ChipsMultiSelectComponent } from './components/chips-multi-select/chips-multi-select.component';
 import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe-detail.component';
+import { IngredientComponent } from './components/recipes/recipe-detail/ingredient/ingredient.component';
+import { EquipmentComponent } from './components/recipes/recipe-detail/equipment/equipment.component';
+import { StepComponent } from './components/recipes/recipe-detail/step/step.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,14 @@ import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe
     RecipeItemComponent,
     RecipeListComponent,
     ChipsMultiSelectComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    IngredientComponent,
+    EquipmentComponent,
+    StepComponent,
+    RegisterComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
