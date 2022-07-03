@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 const MaterialComponents = [
   MatCardModule,
@@ -36,7 +37,8 @@ const MaterialComponents = [
   MatListModule,
   MatStepperModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDialogModule
 ];
 
 @NgModule({

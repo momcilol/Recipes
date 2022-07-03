@@ -11,7 +11,7 @@ import { RecipeInformation } from '../model/RecipeDetails/recipe-information';
 export class SearchService {
 
   private baseUrl = environment.baseUrl;
-  private apiKey = environment.apiKey2;
+  // private apiKey = environment.apiKey2;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class SearchService {
     let cuisString = intolerances.join(",");
     return this.httpClient.get<RootObject>(this.baseUrl + '/recipes/complexSearch', {
       params: {
-        apiKey: this.apiKey, 
+        // apiKey: this.apiKey, 
         query: searchTerm,
         number: resultsNumber,
         diet: diet,
@@ -35,7 +35,7 @@ export class SearchService {
   recipeDetails(id: number, includeNutrition: boolean): Observable<RecipeInformation> {
     return this.httpClient.get<RecipeInformation>(this.baseUrl + '/recipes/' + id + '/information', {
       params: {
-        apiKey: this.apiKey,
+        // apiKey: this.apiKey,
         includeNutrition: includeNutrition
       }
     }

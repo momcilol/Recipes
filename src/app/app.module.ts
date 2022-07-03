@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChipsMultiSelectComponent } from './components/chips-multi-select/chips-multi-select.component';
 import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe-detail.component';
 import { IngredientComponent } from './components/recipes/recipe-detail/ingredient/ingredient.component';
@@ -19,6 +19,9 @@ import { RegisterComponent } from './components/user/register/register.component
 import { LoginComponent } from './components/user/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { ApiKeyInterceptor } from './services/api-key.interceptor';
+import { RegisterDialogComponent } from './components/user/register-dialog/register-dialog.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     RegisterComponent,
     LoginComponent,
     PageNotFoundComponent,
-    LayoutComponent
+    LayoutComponent,
+    RegisterDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { LayoutComponent } from './components/layout/layout.component';
     ReactiveFormsModule
   ],
   providers: [
-    SearchService
+    SearchService,
+    UserService,
+    { provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,20 +1,35 @@
+
 mat-sidenav {
-    margin-top: 80px;
+    margin-top: 60px;
+    padding-top: 20px;
     position: fixed;
     width: 200px;
     height: 100%;
+    background-color: #ffe082 ;
 }
 
 mat-sidenav-container {
-    margin: 0;
-    margin-top: 80px;
-}
+    margin: 0px;
+    margin-top: 65px;
+    padding-top: 35px;
+}   
 
 mat-sidenav-content {
-    padding: 50px;
-    padding-top: 0px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-elevation-z5 {
+    position: fixed;
+    z-index: 2;
 }
 
 .example-spacer {
     flex: 1 1 auto;
+}
+
+a {
+    padding-left: 20px;
 }
