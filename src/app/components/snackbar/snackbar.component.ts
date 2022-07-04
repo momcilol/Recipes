@@ -2,14 +2,14 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-login-snackbar',
-  templateUrl: './login-snackbar.component.html',
-  styleUrls: ['./login-snackbar.component.scss']
+  selector: 'app-snackbar',
+  templateUrl: './snackbar.component.html',
+  styleUrls: ['./snackbar.component.scss']
 })
-export class LoginSnackbarComponent implements OnInit {
+export class SnackbarComponent implements OnInit {
 
   constructor(
-    public sbRef: MatSnackBarRef<LoginSnackbarComponent>,
+    public sbRef: MatSnackBarRef<SnackbarComponent>,
     @Inject(MAT_SNACK_BAR_DATA) public data: any
   ) {}
 

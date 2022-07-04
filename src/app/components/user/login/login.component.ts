@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observer } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
-import { LoginSnackbarComponent } from './login-snackbar/login-snackbar.component';
+import { SnackbarComponent } from '../../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   openSnackBar(message: string, success: boolean) {
-    let sb = this.snackBar.openFromComponent(LoginSnackbarComponent, {
+    let sb = this.snackBar.openFromComponent(SnackbarComponent, {
       data: { message: message },
       duration: 8000,
       panelClass: success ? "success-style" : "error-style",
