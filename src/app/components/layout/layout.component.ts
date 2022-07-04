@@ -20,4 +20,8 @@ export class LayoutComponent implements OnInit {
     this.router.navigate(["/register"]);
   }
 
+  openLogin() {
+    this.router.navigate(["/login"]);
+  }
+
 }

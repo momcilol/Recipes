@@ -20,8 +20,9 @@ import { LoginComponent } from './components/user/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ApiKeyInterceptor } from './services/api-key.interceptor';
-import { RegisterDialogComponent } from './components/user/register-dialog/register-dialog.component';
+import { RegisterDialogComponent } from './components/user/register/register-dialog/register-dialog.component';
 import { UserService } from './services/user.service';
+import { LoginSnackbarComponent } from './components/user/login/login-snackbar/login-snackbar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { UserService } from './services/user.service';
     LoginComponent,
     PageNotFoundComponent,
     LayoutComponent,
-    RegisterDialogComponent
+    RegisterDialogComponent,
+    LoginSnackbarComponent
   ],
   imports: [
     BrowserModule,

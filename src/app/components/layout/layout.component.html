@@ -11,7 +11,8 @@
     <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu="matMenu" xPosition="before">
-    <button (click)="openRegister()" mat-menu-item>Register</button>
+    <button mat-icon-button (click)="openRegister()" mat-menu-item><mat-icon>how_to_reg</mat-icon>Register</button>
+    <button mat-icon-button (click)="openLogin()" mat-menu-item><mat-icon>login</mat-icon>Login</button>
   </mat-menu>
 </mat-toolbar>
 <!-- <div class="sticky-top">
