@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="recipeDetailsObservable|async as recipeDetails">
     <br>
     <div class="row">
         <div class="col-4"></div>
@@ -49,7 +49,7 @@
                 <ng-template matStepperIcon="edit">
                     <mat-icon>done</mat-icon>
                 </ng-template>
-                <mat-step *ngFor="let step of steps; index as i" label="Step {{i + 1}}">
+                <mat-step *ngFor="let step of getSteps(recipeDetails); index as i" label="Step {{i + 1}}">
                     <!-- <mat-step-header label="Step {{i}}"></mat-step-header> -->
                     <app-step [step]="step"></app-step>
                 </mat-step>

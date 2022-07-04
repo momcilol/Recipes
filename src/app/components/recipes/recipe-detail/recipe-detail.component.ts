@@ -5,6 +5,7 @@ import { SearchService } from 'src/app/services/search.service';
 import * as recipeInf from 'src/app/components/recipes/recipe-detail/templete.json';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { Step } from 'src/app/model/RecipeDetails/step';
+import { Observable, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -14,32 +15,44 @@ import { Step } from 'src/app/model/RecipeDetails/step';
 export class RecipeDetailComponent implements OnInit {
 
   private id: number;
-  public recipeDetails: RecipeInformation; 
+  public recipeDetailsObservable: Observable<RecipeInformation>;
   public summary: HTMLElement;
-  public steps: Step[];
+  // public steps: Step[];
 
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private searchService: SearchService
   ) {
-    this.recipeDetails = recipeInf;
-    this.steps = this.recipeDetails.analyzedInstructions[0].steps;
+    // this.recipeDetails = recipeInf;
+    // this.steps = this.recipeDetails.analyzedInstructions[0].steps;
+    console.log("Im here");
+    console.log(this.route.snapshot.paramMap.get('id')!);
+    console.log("Route: " + this.route);
+    console.log("Param map: " + this.route.paramMap);
+    this.route.paramMap.subscribe(
+      (params) => this.recipeDetailsObservable = this.searchService.recipeDetails(parseInt(params.get('id')!), true)
+    );
+    console.log("after");
+    // timeout(3000);
+    // this.steps = this.recipeDetails.analyzedInstructions[0].steps;
+    
+    // console.log(this.steps);
+
   }
 
   ngOnInit(): void {
-    // console.log("Im here");
-    // console.log(this.route.snapshot.paramMap.get('id')!);
-    // console.log("Route: " + this.route);
-    // console.log("Param map: " + this.route.paramMap);
-    // this.route.paramMap.subscribe(
-    //   (params) => this.searchService.recipeDetails(parseInt(params.get('id')!), true)
-    //     .subscribe((res) => this.recipeDetails = res)
-    // );
-    // console.log("after");
+    
   }
 
+  getSteps(recipeInformation :RecipeInformation): Step[] {
+    return recipeInformation.analyzedInstructions.find(
+      (inst) => {
+        if (inst.steps && inst.steps.length > 0)
+          return true;
+        return false;
+      })!.steps;
+  }
 
 
 

@@ -22,15 +22,14 @@
                 {{day}}
             </th>
         </tr>
-        <tr *ngFor="let meal of meals">
+        <tr *ngFor="let meal of meals; index as i">
             <td><span class="day-column rotate">{{meal}}</span></td>
-            <td *ngFor="let d of days" >
+            <td *ngFor="let d of daysNumbers">
                 <div class="meal">
-                    <mat-icon>
-                    no_meals
-                </mat-icon>
+                    <mat-icon *ngIf="!hasMeal(i, d)">
+                        no_meals
+                    </mat-icon>
                 </div>
-                
             </td>
         </tr>
     </table>

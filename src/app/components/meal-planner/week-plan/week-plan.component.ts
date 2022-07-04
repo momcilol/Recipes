@@ -1,4 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { GetWeekPlan } from 'src/app/model/MealPlan/Crud/get-week-plan';
+import { MealPlannerService } from 'src/app/services/meal-planner.service';
 
 @Component({
   selector: 'app-week-plan',
@@ -10,13 +13,17 @@ export class WeekPlanComponent implements OnInit {
   public today: Date;
   public monday: Date;
   public weekTitle: string;
-  public days: number[] = [0, 1, 2, 3, 4, 5, 6];
+  public daysNumbers: number[] = [0, 1, 2, 3, 4, 5, 6];
   public weekDaysNames: string[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   public thisWeek: boolean;
 
+  public weekPlan: GetWeekPlan;
+
   public meals: string[] = ["Breakfast", "Lunch", "Dinner"];
 
-  constructor() {
+  constructor(private mealPlannerService: MealPlannerService) { }
+
+  ngOnInit(): void {
     this.today = new Date();
     console.log(this.today);
     this.monday = new Date();
@@ -24,17 +31,28 @@ export class WeekPlanComponent implements OnInit {
     this.updateWeekTitle();
   }
 
-  ngOnInit(): void {
+  loadWeekPlan() {
+    const datepipe: DatePipe = new DatePipe('en-US');
+    let formattedDate = datepipe.transform(this.monday, 'yyyy-MM-dd');
+    console.log(formattedDate);
+
+    this.mealPlannerService.getWeekPlan(formattedDate!).subscribe({
+      next: (res) => { this.weekPlan = res },
+      error: () => { console.log("Error week plan") }
+    })
   }
+
 
   nextWeek() {
     this.monday.setMilliseconds(this.monday.getMilliseconds() + 7 * 24 * 60 * 60 * 1000);
     this.updateWeekTitle();
+    this.loadWeekPlan()
   }
 
   previousWeek() {
     this.monday.setMilliseconds(this.monday.getMilliseconds() - 7 * 24 * 60 * 60 * 1000);
     this.updateWeekTitle();
+    this.loadWeekPlan();
   }
 
   intToOrdinal(num: number): string {
@@ -82,4 +100,11 @@ export class WeekPlanComponent implements OnInit {
   }
 
 
+  hasMeal(i: number, d: number): boolean {
+    console.log(i + ", " + d);
+    
+    if (this.weekPlan && this.weekPlan.days && this.weekPlan.days[d] && this.weekPlan.days[d].items.find((item) => item.slot == i + 1))
+      return true;
+    return false;
+  }
 }
