@@ -11,8 +11,9 @@
     <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu="matMenu" xPosition="before">
-    <button mat-icon-button (click)="openRegister()" mat-menu-item><mat-icon>how_to_reg</mat-icon>Register</button>
-    <button mat-icon-button (click)="openLogin()" mat-menu-item><mat-icon>login</mat-icon>Login</button>
+    <button *ngIf="!isLoggedIn()" (click)="openRegister()" mat-menu-item><mat-icon>how_to_reg</mat-icon>Register</button>
+    <button *ngIf="!isLoggedIn()" (click)="openLogin()" mat-menu-item><mat-icon>login</mat-icon>Login</button>
+    <button *ngIf="isLoggedIn()" (click)="logout()" mat-menu-item><mat-icon>logout</mat-icon>Logout</button>
   </mat-menu>
 </mat-toolbar>
 <!-- <div class="sticky-top">
@@ -21,7 +22,7 @@
 <mat-sidenav-container hasBackdrop="false">
   <mat-sidenav  #sidenav="matSidenav" class="mat-elevation-z5" mode="over" role="navigation">
     <mat-nav-list>
-      <a mat-list-item routerLink="/recipe-list" routerLinkActive="active" ariaCurrentWhenActive="page">Recipe List</a>
+      <a mat-list-item routerLink="/recipe-list" routerLinkActive="active" ariaCurrentWhenActive="page">Search recipes</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content role="main">

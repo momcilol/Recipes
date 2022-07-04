@@ -24,4 +24,13 @@ export class LayoutComponent implements OnInit {
     this.router.navigate(["/login"]);
   }
 
+  logout() {
+    localStorage.setItem("username", "");
+    localStorage.setItem("hash", "");
+    this.router.navigate(["/login"]);
+  }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem("username") && localStorage.getItem("hash") ? true : false;
+  }
 }
