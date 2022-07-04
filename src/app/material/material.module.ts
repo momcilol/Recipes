@@ -10,7 +10,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatListModule } from '@angular/material/list';
@@ -32,7 +32,6 @@ const MaterialComponents = [
   MatAutocompleteModule,
   MatSelectModule,
   MatSidenavModule,
-  ScrollingModule,
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatListModule,

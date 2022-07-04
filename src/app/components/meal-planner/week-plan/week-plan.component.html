@@ -1,0 +1,37 @@
+<div>
+    <table>
+        <tr>
+            <td colspan="8" class="heading today" [ngClass]="thisWeek ? 'today': ''" id="parent">
+                <button mat-icon-button (click)="previousWeek()" class="child">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <span class="example-spacer"></span>
+                <span class="example-spacer">
+                    <h1 class="child"><strong>{{weekTitle}}</strong></h1>
+                </span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button (click)="nextWeek()" class="child">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th class="day-column heading"></th>
+            <!-- [ngClass]="isToday(i) ? 'today': ''" -->
+            <th *ngFor="let day of weekDaysNames; index as i" class="heading">
+                {{day}}
+            </th>
+        </tr>
+        <tr *ngFor="let meal of meals">
+            <td><span class="day-column rotate">{{meal}}</span></td>
+            <td *ngFor="let d of days" >
+                <div class="meal">
+                    <mat-icon>
+                    no_meals
+                </mat-icon>
+                </div>
+                
+            </td>
+        </tr>
+    </table>
+</div>

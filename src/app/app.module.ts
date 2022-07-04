@@ -23,6 +23,9 @@ import { ApiKeyInterceptor } from './services/api-key.interceptor';
 import { RegisterDialogComponent } from './components/user/register/register-dialog/register-dialog.component';
 import { UserService } from './services/user.service';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CdkModule } from './cdk/cdk.module';
+import { WeekPlanComponent } from './components/meal-planner/week-plan/week-plan.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +42,15 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     PageNotFoundComponent,
     LayoutComponent,
     RegisterDialogComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    WeekPlanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    CdkModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
@@ -53,6 +58,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
   providers: [
     SearchService,
     UserService,
+    AuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

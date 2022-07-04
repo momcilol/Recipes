@@ -1,0 +1,43 @@
+table, th, td {
+    border: 1px solid #ffe082;
+}
+
+.heading {
+    background-color: #ffe082;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.today {
+    background-color: #ffc107;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+#parent {
+    white-space: nowrap;
+}
+
+.child {
+    display: inline-block;
+}
+
+.day-column {
+    width: 20px;
+}
+
+.meal {
+    min-height: 200px;
+    width: 210px;
+}
+
+.rotate {
+    display: flex;
+    text-align: center;
+    -webkit-transform: rotate(-90deg);
+    -moz-box-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    vertical-align: middle;
+}

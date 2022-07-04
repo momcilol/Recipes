@@ -1,7 +1,15 @@
 <h1 mat-dialog-title>You have successfully registered!</h1>
 <div mat-dialog-content>
-  <p>Your username is <strong>{{account.username}}</strong></p>
-  <p>Your password is <strong>{{account.hash}}</strong></p>
+  <p>Your username is <strong>{{account.username}}</strong>
+    <button mat-icon-button [cdkCopyToClipboard]="account.username">
+      <mat-icon>content_copy</mat-icon>
+    </button> 
+  </p>
+  <p>Your password is <strong>{{account.hash}}</strong>
+    <button mat-icon-button [cdkCopyToClipboard]="account.hash">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </p>
   <label>Be sure to save them!</label>
 </div>
 <div mat-dialog-actions class="end">

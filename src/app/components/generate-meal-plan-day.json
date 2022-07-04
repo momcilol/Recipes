@@ -1,0 +1,34 @@
+{
+    "meals": [
+        {
+            "id": 489492,
+            "imageType": "jpg",
+            "title": "Reese's Peanut Butter Cookies",
+            "readyInMinutes": 20,
+            "servings": 36,
+            "sourceUrl": "https://dinnersdishesanddesserts.com/reeses-peanut-butter-cookies/"
+        },
+        {
+            "id": 914788,
+            "imageType": "jpg",
+            "title": "Sun Dried Tomato Pesto Pasta with Zoodles",
+            "readyInMinutes": 20,
+            "servings": 4,
+            "sourceUrl": "http://ohsweetbasil.com/sun-dried-tomato-pesto-pasta-zoodles-recipe/"
+        },
+        {
+            "id": 299898,
+            "imageType": "jpeg",
+            "title": "Cornbread Stuffing",
+            "readyInMinutes": 80,
+            "servings": 8,
+            "sourceUrl": "http://www.foodnetwork.com/recipes/michael-symon/cornbread-stuffing-recipe.html"
+        }
+    ],
+    "nutrients": {
+        "calories": 1689.61,
+        "protein": 50.43,
+        "fat": 65.52,
+        "carbohydrates": 232.42
+    }
+}

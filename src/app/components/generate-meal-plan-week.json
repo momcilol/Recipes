@@ -1,0 +1,242 @@
+{
+    "week": {
+        "monday": {
+            "meals": [
+                {
+                    "id": 1129519,
+                    "imageType": "jpg",
+                    "title": "Copycat Chipotle Chicken",
+                    "readyInMinutes": 130,
+                    "servings": 8,
+                    "sourceUrl": "https://www.galonamission.com/copycat-chipotle-chicken/"
+                },
+                {
+                    "id": 608448,
+                    "imageType": "jpg",
+                    "title": "Bacon-Lovers Fried Rice",
+                    "readyInMinutes": 15,
+                    "servings": 4,
+                    "sourceUrl": "http://bestrecipebox.com/recipes/bacon-fried-rice-recipe/"
+                },
+                {
+                    "id": 516341,
+                    "imageType": "jpg",
+                    "title": "Italian Canederli",
+                    "readyInMinutes": 195,
+                    "servings": 2,
+                    "sourceUrl": "http://www.mysanfranciscokitchen.com/italian-canederli/"
+                }
+            ],
+            "nutrients": {
+                "calories": 1769.71,
+                "protein": 57.9,
+                "fat": 62.61,
+                "carbohydrates": 240.24
+            }
+        },
+        "tuesday": {
+            "meals": [
+                {
+                    "id": 831340,
+                    "imageType": "jpg",
+                    "title": "Simple Sugar Cookies",
+                    "readyInMinutes": 60,
+                    "servings": 24,
+                    "sourceUrl": "http://www.simplyscratch.com/2016/11/simple-sugar-cookies.html"
+                },
+                {
+                    "id": 157202,
+                    "imageType": "jpg",
+                    "title": "Pasta With Mushrooms, Brussels Sprouts, and Parmesan",
+                    "readyInMinutes": 25,
+                    "servings": 4,
+                    "sourceUrl": "http://www.seriouseats.com/recipes/2013/10/orecchiette-pasta-with-mushrooms-brussels-sprouts-recipe.html"
+                },
+                {
+                    "id": 634496,
+                    "imageType": "jpg",
+                    "title": "BBQ Mac and Cheese",
+                    "readyInMinutes": 45,
+                    "servings": 4,
+                    "sourceUrl": "https://spoonacular.com/bbq-mac-and-cheese-634496"
+                }
+            ],
+            "nutrients": {
+                "calories": 1673.62,
+                "protein": 60.93,
+                "fat": 61.39,
+                "carbohydrates": 220.68
+            }
+        },
+        "wednesday": {
+            "meals": [
+                {
+                    "id": 200382,
+                    "imageType": "jpg",
+                    "title": "Yuletide Toffee Squares",
+                    "readyInMinutes": 45,
+                    "servings": 96,
+                    "sourceUrl": "http://www.myrecipes.com/recipe/yuletide-toffee-squares-10000001585426/"
+                },
+                {
+                    "id": 1093320,
+                    "imageType": "jpg",
+                    "title": "Balsamic vinegar potatoes",
+                    "readyInMinutes": 30,
+                    "servings": 2,
+                    "sourceUrl": "https://www.bbcgoodfood.com/recipes/711635/balsamic-vinegar-potatoes"
+                },
+                {
+                    "id": 715563,
+                    "imageType": "jpg",
+                    "title": "Pierogi Casserole",
+                    "readyInMinutes": 45,
+                    "servings": 4,
+                    "sourceUrl": "https://spoonacular.com/pierogi-casserole-715563"
+                }
+            ],
+            "nutrients": {
+                "calories": 1699.61,
+                "protein": 44.14,
+                "fat": 66.1,
+                "carbohydrates": 236.17
+            }
+        },
+        "thursday": {
+            "meals": [
+                {
+                    "id": 1697781,
+                    "imageType": "jpg",
+                    "title": "Edible Brownie Batter",
+                    "readyInMinutes": 10,
+                    "servings": 2,
+                    "sourceUrl": "https://spoonacular.com/edible-brownie-batter-1697781"
+                },
+                {
+                    "id": 306881,
+                    "imageType": "jpeg",
+                    "title": "Loaded Lobster Roll",
+                    "readyInMinutes": 22,
+                    "servings": 4,
+                    "sourceUrl": "http://www.foodnetwork.com/recipes/loaded-lobster-roll-recipe.html"
+                },
+                {
+                    "id": 529840,
+                    "imageType": "jpg",
+                    "title": "Sun Dried Tomato and Ground Beef Sliders",
+                    "readyInMinutes": 45,
+                    "servings": 8,
+                    "sourceUrl": "http://motherrimmy.com/sun-dried-tomato-sliders/"
+                }
+            ],
+            "nutrients": {
+                "calories": 1700.9,
+                "protein": 47.07,
+                "fat": 77.35,
+                "carbohydrates": 216.32
+            }
+        },
+        "friday": {
+            "meals": [
+                {
+                    "id": 1697781,
+                    "imageType": "jpg",
+                    "title": "Edible Brownie Batter",
+                    "readyInMinutes": 10,
+                    "servings": 2,
+                    "sourceUrl": "https://spoonacular.com/edible-brownie-batter-1697781"
+                },
+                {
+                    "id": 1091369,
+                    "imageType": "jpg",
+                    "title": "Crab Bake",
+                    "readyInMinutes": 10,
+                    "servings": 2,
+                    "sourceUrl": "https://www.bbcgoodfood.com/recipes/2048648/crab-bake"
+                },
+                {
+                    "id": 8747,
+                    "imageType": "jpg",
+                    "title": "French in a Flash: Parmesan and Gruyère Gougères with Jambon de Bayonne, Arugula, and Dijon-Chive Butter",
+                    "readyInMinutes": 45,
+                    "servings": 8,
+                    "sourceUrl": "http://www.seriouseats.com/recipes/2009/04/french-in-a-flash-parmesan-and-gruyere-gouger.html"
+                }
+            ],
+            "nutrients": {
+                "calories": 1947.18,
+                "protein": 49.06,
+                "fat": 82.05,
+                "carbohydrates": 263.59
+            }
+        },
+        "saturday": {
+            "meals": [
+                {
+                    "id": 1697711,
+                    "imageType": "jpg",
+                    "title": "Applesauce & Apple Butter - Your for the Beginning of Fall",
+                    "readyInMinutes": 45,
+                    "servings": 2,
+                    "sourceUrl": "https://spoonacular.com/applesauce-apple-butter-your-for-the-beginning-of-fall-1697711"
+                },
+                {
+                    "id": 330967,
+                    "imageType": "jpeg",
+                    "title": "Shrimp Po' Boy with Horseradish Remoulade",
+                    "readyInMinutes": 30,
+                    "servings": 4,
+                    "sourceUrl": "http://www.foodnetwork.com/recipes/jeff-mauro/shrimp-po-boy-with-horseradish-remoulade-recipe.html"
+                },
+                {
+                    "id": 443814,
+                    "imageType": "jpg",
+                    "title": "Easy Shrimp Scampi",
+                    "readyInMinutes": 25,
+                    "servings": 1,
+                    "sourceUrl": "http://www.tasteofhome.com/recipes/easy-shrimp-scampi"
+                }
+            ],
+            "nutrients": {
+                "calories": 1880.81,
+                "protein": 59.19,
+                "fat": 56.09,
+                "carbohydrates": 299.34
+            }
+        },
+        "sunday": {
+            "meals": [
+                {
+                    "id": 1697781,
+                    "imageType": "jpg",
+                    "title": "Edible Brownie Batter",
+                    "readyInMinutes": 10,
+                    "servings": 2,
+                    "sourceUrl": "https://spoonacular.com/edible-brownie-batter-1697781"
+                },
+                {
+                    "id": 1554753,
+                    "imageType": "jpg",
+                    "title": "Quick Tofu Stir Fry",
+                    "readyInMinutes": 20,
+                    "servings": 4,
+                    "sourceUrl": "https://www.budgetbytes.com/quick-tofu-stir-fry/"
+                },
+                {
+                    "id": 294292,
+                    "imageType": "jpeg",
+                    "title": "Fried Rice",
+                    "readyInMinutes": 27,
+                    "servings": 6,
+                    "sourceUrl": "http://www.foodnetwork.com/recipes/food-network-kitchens/fried-rice-recipe2.html"
+                }
+            ],
+            "nutrients": {
+                "calories": 1900.43,
+                "protein": 39.48,
+                "fat": 70.89,
+                "carbohydrates": 287.4
+            }
+        }
+    }
+}
