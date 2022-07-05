@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const MaterialComponents = [
   MatCardModule,
@@ -40,7 +41,8 @@ const MaterialComponents = [
   MatMenuModule,
   MatDialogModule,
   MatSnackBarModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatNativeDateModule
 ];
 
 @NgModule({

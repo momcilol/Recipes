@@ -107,36 +107,41 @@ export class WeekPlanComponent implements OnInit {
   }
 
 
-  hasMeal(i: number, d: number): boolean {
+  hasMeal(i: number, d: number, weekPlan: GetWeekPlan): boolean {
     console.log(i + ", " + d);
     
-    if (this.weekPlan && this.weekPlan.days && this.weekPlan.days[d] && this.weekPlan.days[d].items.find((item) => item.slot == i + 1))
+    
+    if (weekPlan && weekPlan.days && weekPlan.days[d] && weekPlan.days[d].items.find((item) => item.slot == i + 1))
       return true;
     return false;
   }
 
-  getMeals(i: number, d: number): Item[] {
-    if(this.hasMeal(i, d)) {
+  getMeals(i: number, d: number, weekPlan: GetWeekPlan): Item[] {
+    if(this.hasMeal(i, d, weekPlan)) {
       return this.weekPlan.days[d].items;
     }
     return [];
   }
 
-  hasSummary(d: number): boolean {
+  hasSummary(d: number, weekPlan: GetWeekPlan): boolean {
     console.log(d);
     
-    if (this.weekPlan && this.weekPlan.days && this.weekPlan.days[d].nutritionSummary)
+    if (weekPlan && weekPlan.days && weekPlan.days[d].nutritionSummary)
       return true;
     return false;
   }
 
-  getNutrients(d: number): Nutrient[] {
-    if(this.hasSummary(d)) {
-      return this.weekPlan.days[d].nutritionSummary.nutrients;
+  getNutrients(d: number, weekPlan: GetWeekPlan): Nutrient[] {
+    if(this.hasSummary(d, weekPlan)) {
+      return weekPlan.days[d].nutritionSummary.nutrients;
     }
     return [];
   }
 
+  print(week: GetWeekPlan) {
+    console.log(week);
+    
+  }
   
 
 }

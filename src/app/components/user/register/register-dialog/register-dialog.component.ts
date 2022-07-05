@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Account } from 'src/app/model/User/account';
 
@@ -9,7 +9,8 @@ import { Account } from 'src/app/model/User/account';
 })
 export class RegisterDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public account: Account) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public account: Account) { }
 
   ngOnInit(): void {
   }

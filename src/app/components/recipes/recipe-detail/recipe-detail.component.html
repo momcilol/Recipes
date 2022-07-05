@@ -22,7 +22,7 @@
     <div *ngIf="isLoggedIn()" class="row">
         <div class="col-2"></div>
         <div class="col-3">
-            <button mat-raised-button color="accent"><mat-icon>add_circle</mat-icon> Add to planner</button>
+            <button mat-raised-button color="accent" (click)="addMeal()"><mat-icon>add_circle</mat-icon> Add to planner</button>
         </div>
     </div>
     <br>
