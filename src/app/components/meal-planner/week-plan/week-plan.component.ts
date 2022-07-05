@@ -1,6 +1,9 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { GetWeekPlan } from 'src/app/model/MealPlan/Crud/get-week-plan';
+import { Observable } from 'rxjs';
+import { GetWeekPlan } from 'src/app/model/MealPlan/getWeekPlan/get-week-plan';
+import { Item } from 'src/app/model/MealPlan/getWeekPlan/item';
+import { Nutrient } from 'src/app/model/MealPlan/getWeekPlan/nutrient';
 import { MealPlannerService } from 'src/app/services/meal-planner.service';
 
 @Component({
@@ -18,6 +21,7 @@ export class WeekPlanComponent implements OnInit {
   public thisWeek: boolean;
 
   public weekPlan: GetWeekPlan;
+  public weekPlanObservable: Observable<GetWeekPlan>;
 
   public meals: string[] = ["Breakfast", "Lunch", "Dinner"];
 
@@ -29,6 +33,7 @@ export class WeekPlanComponent implements OnInit {
     this.monday = new Date();
     this.monday.setMilliseconds(this.today.getMilliseconds() - ((this.today.getDay() - 1) % 7) * 24 * 60 * 60 * 1000);
     this.updateWeekTitle();
+    this.loadWeekPlan()
   }
 
   loadWeekPlan() {
@@ -36,7 +41,9 @@ export class WeekPlanComponent implements OnInit {
     let formattedDate = datepipe.transform(this.monday, 'yyyy-MM-dd');
     console.log(formattedDate);
 
-    this.mealPlannerService.getWeekPlan(formattedDate!).subscribe({
+    this.weekPlanObservable = this.mealPlannerService.getWeekPlan(formattedDate!);
+    
+    this.weekPlanObservable.subscribe({
       next: (res) => { this.weekPlan = res },
       error: () => { console.log("Error week plan") }
     })
@@ -107,4 +114,29 @@ export class WeekPlanComponent implements OnInit {
       return true;
     return false;
   }
+
+  getMeals(i: number, d: number): Item[] {
+    if(this.hasMeal(i, d)) {
+      return this.weekPlan.days[d].items;
+    }
+    return [];
+  }
+
+  hasSummary(d: number): boolean {
+    console.log(d);
+    
+    if (this.weekPlan && this.weekPlan.days && this.weekPlan.days[d].nutritionSummary)
+      return true;
+    return false;
+  }
+
+  getNutrients(d: number): Nutrient[] {
+    if(this.hasSummary(d)) {
+      return this.weekPlan.days[d].nutritionSummary.nutrients;
+    }
+    return [];
+  }
+
+  
+
 }

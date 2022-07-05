@@ -1,5 +1,5 @@
 <div>
-    <table>
+    <table *ngIf="weekPlanObservable|async as week">
         <tr>
             <td colspan="8" class="heading today" [ngClass]="thisWeek ? 'today': ''" id="parent">
                 <button mat-icon-button (click)="previousWeek()" class="child">
@@ -29,6 +29,21 @@
                     <mat-icon *ngIf="!hasMeal(i, d)">
                         no_meals
                     </mat-icon>
+
+                    <app-item *ngFor="let item of getMeals(i, d)" [item]="item"></app-item>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><span class="day-column rotate">Summary</span></td>
+            <td *ngFor="let d of daysNumbers">
+                <div class="meal" *ngIf="!hasSummary(d)">
+                    <mat-icon>
+                        analytics
+                    </mat-icon>
+                </div>
+                <div *ngFor="let nutrient of getNutrients(d)" class="summary">
+                    {{nutrient.name}}: {{nutrient.amount}}{{nutrient.unit}} ~ {{nutrient.percentOfDailyNeeds}}%
                 </div>
             </td>
         </tr>

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Item } from 'src/app/model/MealPlan/Crud/item';
-import { Value } from 'src/app/model/MealPlan/Crud/value';
+import { Item } from 'src/app/model/MealPlan/getWeekPlan/item';
+import { Value } from 'src/app/model/MealPlan/getWeekPlan/value';
 
 @Component({
   selector: 'app-item',
@@ -11,7 +11,7 @@ import { Value } from 'src/app/model/MealPlan/Crud/value';
 export class ItemComponent implements OnInit {
 
   @Input()
-  public item: Value;
+  public item: Item;
 
   constructor(private router: Router) { }
 

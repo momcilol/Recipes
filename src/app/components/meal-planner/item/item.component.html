@@ -1,7 +1,7 @@
 <mat-card class="example-card">
-    <img mat-card-image [src]="item.image">
+    <img mat-card-image [src]="item.value.image">
     <mat-card-content>
-        <mat-card-title>{{item.title}}</mat-card-title>
+        <mat-card-title>{{item.value.title}}</mat-card-title>
     </mat-card-content>
     <mat-card-actions>
         <button mat-raised-button color="accent" (click)="seeDetails()">Deatils</button>
