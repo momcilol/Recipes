@@ -54,7 +54,9 @@ export class RecipeDetailComponent implements OnInit {
       })!.steps;
   }
 
-
+  isLoggedIn(): boolean {
+    return localStorage.getItem("username") && localStorage.getItem("hash") ? true : false;
+  }
 
 
 }

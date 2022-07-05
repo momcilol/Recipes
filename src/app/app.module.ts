@@ -27,6 +27,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { CdkModule } from './cdk/cdk.module';
 import { WeekPlanComponent } from './components/meal-planner/week-plan/week-plan.component';
 import { ItemComponent } from './components/meal-planner/item/item.component';
+import { AddMealComponent } from './components/meal-planner/add-meal/add-meal.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ItemComponent } from './components/meal-planner/item/item.component';
     RegisterDialogComponent,
     SnackbarComponent,
     WeekPlanComponent,
-    ItemComponent
+    ItemComponent,
+    AddMealComponent
   ],
   imports: [
     BrowserModule,
